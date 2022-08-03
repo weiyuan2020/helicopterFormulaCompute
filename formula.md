@@ -103,19 +103,19 @@ z_p k_s\]
 \end{bmatrix}\]
 
 
-桨叶微段转速 UTUPUR
+桨叶微段转速 UTURUP
 \[
 \begin{align*}
 u_{T} 
 &=-e \left(r_s-\Omega_R\right) \cos \left(\zeta _i\right)\\
 &+{y_{2}} p_s \sin \left(\beta _i\right) \cos \left(\zeta _i+\psi \right)-{y_{2}} q_s \sin \left(\beta _i\right) \sin \left(\zeta _i+\psi \right)-{y_{2}} \left(r_s-\Omega_R\right) \cos \left(\beta _i\right)\\
 &+u_s \sin \left(\zeta _i+\psi \right)+v_s \cos \left(\zeta _i+\psi \right)\\
-u_{P} 
+u_{R} 
 &=-e p_s \sin (\psi ) \sin \left(\beta _i\right)-e q_s \cos (\psi ) \sin \left(\beta _i\right)-e \left(r_s-\Omega_R\right) \cos \left(\beta _i\right) \sin \left(\zeta _i\right)\\
 &-u_s \cos (\psi ) \cos \left(\beta _i\right) \cos \left(\zeta _i\right)+u_s \sin (\psi ) \cos \left(\beta _i\right) \sin \left(\zeta _i\right)\\
 &+v_s \sin (\psi ) \cos \left(\beta _i\right) \cos \left(\zeta _i\right)+v_s \cos (\psi ) \cos \left(\beta _i\right) \sin \left(\zeta _i\right)\\
 &-w_s \sin \left(\beta _i\right)\\
-u_{R} 
+u_{P} 
 &=p_s \left(e \sin (\psi ) \cos \left(\beta _i\right)+{y_{2}} \sin \left(\zeta _i+\psi \right)\right)\\
 &+q_s \left(e \cos (\psi ) \cos \left(\beta _i\right)-{y_{2}} \sin (\psi ) \sin \left(\zeta _i\right)+{y_{2}} \cos (\psi ) \cos \left(\zeta _i\right)\right)\\
 &-e \left(r_s-\Omega_R\right) \sin \left(\beta _i\right) \sin \left(\zeta _i\right)\\
@@ -128,6 +128,47 @@ u_{R}
 
 \[u_{T}=-e\left(r_s-\Omega_R\right)\cos\left(\zeta_i\right)+{y_{2}}p_s\sin\left(\beta_i\right)\cos\left(\zeta_i+\psi\right)-{y_{2}}q_s\sin\left(\beta_i\right)\sin\left(\zeta_i+\psi\right)-{y_{2}}\left(r_s-\Omega_R\right)\cos\left(\beta_i\right)+u_s\sin\left(\zeta_i+\psi\right)+v_s\cos\left(\zeta_i+\psi\right)\]
 
-\[u_{P}=-ep_s\sin(\psi)\sin\left(\beta_i\right)-eq_s\cos(\psi)\sin\left(\beta_i\right)-e\left(r_s-\Omega_R\right)\cos\left(\beta_i\right)\sin\left(\zeta_i\right)-u_s\cos(\psi)\cos\left(\beta_i\right)\cos\left(\zeta_i\right)+u_s\sin(\psi)\cos\left(\beta_i\right)\sin\left(\zeta_i\right)+v_s\sin(\psi)\cos\left(\beta_i\right)\cos\left(\zeta_i\right)+v_s\cos(\psi)\cos\left(\beta_i\right)\sin\left(\zeta_i\right)-w_s\sin\left(\beta_i\right)\]
+\[u_{R}=-ep_s\sin(\psi)\sin\left(\beta_i\right)-eq_s\cos(\psi)\sin\left(\beta_i\right)-e\left(r_s-\Omega_R\right)\cos\left(\beta_i\right)\sin\left(\zeta_i\right)-u_s\cos(\psi)\cos\left(\beta_i\right)\cos\left(\zeta_i\right)+u_s\sin(\psi)\cos\left(\beta_i\right)\sin\left(\zeta_i\right)+v_s\sin(\psi)\cos\left(\beta_i\right)\cos\left(\zeta_i\right)+v_s\cos(\psi)\cos\left(\beta_i\right)\sin\left(\zeta_i\right)-w_s\sin\left(\beta_i\right)\]
 
-\[u_{R}=p_s\left(e\sin(\psi)\cos\left(\beta_i\right)+{y_{2}}\sin\left(\zeta_i+\psi\right)\right)+q_s\left(e\cos(\psi)\cos\left(\beta_i\right)-{y_{2}}\sin(\psi)\sin\left(\zeta_i\right)+{y_{2}}\cos(\psi)\cos\left(\zeta_i\right)\right)-e\left(r_s-\Omega_R\right)\sin\left(\beta_i\right)\sin\left(\zeta_i\right)+u_s\sin(\psi)\sin\left(\beta_i\right)\sin\left(\zeta_i\right)-u_s\cos(\psi)\sin\left(\beta_i\right)\cos\left(\zeta_i\right)+v_s\sin(\psi)\sin\left(\beta_i\right)\cos\left(\zeta_i\right)+v_s\cos(\psi)\sin\left(\beta_i\right)\sin\left(\zeta_i\right)+w_s\cos\left(\beta_i\right)\]
+\[u_{P}=p_s\left(e\sin(\psi)\cos\left(\beta_i\right)+{y_{2}}\sin\left(\zeta_i+\psi\right)\right)+q_s\left(e\cos(\psi)\cos\left(\beta_i\right)-{y_{2}}\sin(\psi)\sin\left(\zeta_i\right)+{y_{2}}\cos(\psi)\cos\left(\zeta_i\right)\right)-e\left(r_s-\Omega_R\right)\sin\left(\beta_i\right)\sin\left(\zeta_i\right)+u_s\sin(\psi)\sin\left(\beta_i\right)\sin\left(\zeta_i\right)-u_s\cos(\psi)\sin\left(\beta_i\right)\cos\left(\zeta_i\right)+v_s\sin(\psi)\sin\left(\beta_i\right)\cos\left(\zeta_i\right)+v_s\cos(\psi)\sin\left(\beta_i\right)\sin\left(\zeta_i\right)+w_s\cos\left(\beta_i\right)\]
+
+
+
+相对气流速度 $V_{WP}$ 的幅值 $U_Y$ 和偏斜角 $\gamma_Y$ 分别为
+
+\[
+U_Y = \sqrt{
+    U_T^2+
+    U_R^2+
+    U_P^2
+    }    
+\]
+
+\[
+    \gamma_Y = \arccos \frac{|U_T|}{\sqrt{U_T^2+U_R^2}}
+\]
+
+旋翼桨叶安装角 $\theta_G$ 可以表示为
+
+\[
+    \theta_G =
+    \theta_0 
+    -\theta_{1C}\cos(\psi+\Delta_{SP})
+    -\theta_{1S}\sin(\psi+\Delta_{SP})
+    +\theta_{TW}
+\]
+
+$\Delta_{SP}$ 为旋翼自动倾斜器提前操纵角， $\theta_{TW}$为旋翼桨叶负扭角，
+可以表示为桨叶径向位置的函数
+
+\[
+    \theta_{TW}=f(\epsilon+\bar{y}_2)
+\]
+
+由桨叶安装角和桨叶相对来流速度各分量，可得桨叶的叶素迎角为
+
+\[
+    \alpha_Y = \arctan \left[
+        \frac{(U_T \tan\theta_G+U_P)\cos\gamma_Y}{U_T-U_P\tan\theta_G\cos^2\gamma_Y}
+    \right]
+\]
