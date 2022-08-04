@@ -364,5 +364,19 @@ $M_{\beta LD},  M_{\zeta LD}$ 为挥舞、摆振方向由摆振阻尼器产生�
 
 
 ? 弹簧力矩呢
-\[I_{b} \ddots{\beta_i} = M_{\beta LD} + M_{\beta A} + M_{\beta I}\]
+\[I_{b} \ddot{\beta_i} = M_{\beta LD} + M_{\beta A} + M_{\beta I}\]
 
+
+\[
+\rho\left(\frac{1}{2}-\frac{\epsilon ^2}{2}\right) \]
+
+\[
+\left(y_2 p_s(t) q_s(t) \cos \left(\beta _i(t)\right) \sin \left(\zeta _i(t)\\+\psi (t)\right)-y_2 p_s(t) r_s(t) \sin \left(\beta _i(t)\right)+y_2 q_s(t){}^2 \cos \left(\beta _i(t)\right) \cos \left(\zeta _i(t)+\psi (t)\right)\\
+-y_2 \sin \left(\beta _i(t)\right) q_s'(t)-y_2 q_s(t) \beta _i'(t) \cos \left(\beta _i(t)\right)-y_2 r_s(t) \psi '(t) \cos \left(\beta _i(t)\right) \cos \left(\zeta _i(t)+\psi (t)\right)\\
++y_2 r_s(t) \beta _i'(t) \sin \left(\beta _i(t)\right) \sin \left(\zeta _i(t)+\psi (t)\right)\\
+-y_2 r_s(t) \cos \left(\beta _i(t)\right) \zeta _i'(t) \cos \left(\zeta _i(t)+\psi (t)\right)\\
+-y_2 \cos \left(\beta _i(t)\right) r_s'(t) \sin \left(\zeta _i(t)+\psi (t)\right)\\+y_2 r_s(t){}^2 \cos \left(\beta _i(t)\right) \cos \left(\zeta _i(t)+\psi (t)\right)+u_s'(t)\right)\\
+\]
+
+
+$S_b a_P = I\ddot{\beta}+M_{\beta LD}+M_{\beta A}$
