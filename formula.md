@@ -103,9 +103,9 @@ z_p k_s\]
 \end{bmatrix}\]
 
 
-桨叶微段转速 UTURUP
+桨叶微段转速 U_TU_RU_P
 \[
-\begin{align*}
+\begin{align\cdot }
 u_{T} 
 &=-e \left(r_s-\Omega_R\right) \cos \left(\zeta _i\right)\\
 &+{y_{2}} p_s \sin \left(\beta _i\right) \cos \left(\zeta _i+\psi \right)-{y_{2}} q_s \sin \left(\beta _i\right) \sin \left(\zeta _i+\psi \right)-{y_{2}} \left(r_s-\Omega_R\right) \cos \left(\beta _i\right)\\
@@ -122,7 +122,7 @@ u_{P}
 &+u_s \sin (\psi ) \sin \left(\beta _i\right) \sin \left(\zeta _i\right)-u_s \cos (\psi ) \sin \left(\beta _i\right) \cos \left(\zeta _i\right)\\
 &+v_s \sin (\psi ) \sin \left(\beta _i\right) \cos \left(\zeta _i\right)+v_s \cos (\psi ) \sin \left(\beta _i\right) \sin \left(\zeta _i\right)\\
 &+w_s \cos \left(\beta _i\right)\\
-\end{align*}
+\end{align\cdot }
 \]
 
 
@@ -172,3 +172,197 @@ $\Delta_{SP}$ 为旋翼自动倾斜器提前操纵角， $\theta_{TW}$为旋翼�
         \frac{(U_T \tan\theta_G+U_P)\cos\gamma_Y}{U_T-U_P\tan\theta_G\cos^2\gamma_Y}
     \right]
 \]
+
+
+上面给出的桨叶迎角公式推导过程
+
+在$U_R=0$的情况下，桨叶来流与安装角共同决定的桨叶迎角
+
+\[
+    \tan\alpha_Y = \tan\left[\theta_G+\alpha_W\right] \\
+    =\frac{\tan\theta_G+\tan\alpha_W}{1-\tan\theta_G\tan\alpha_W}\\
+    =\frac{\tan\theta_G+\frac{U_P}{U_T}}{1-\tan\theta_G\frac{U_P}{U_T}}
+\]
+
+其中 $\theta_G$ 为桨叶微段安装角， $\alpha_W$为$U_R=0$ 时的来流$U_T,U_P$间的夹角
+$\tan\alpha_W = \frac{U_P}{U_T}$
+
+当$U_R$不等于0时，认为整个桨叶微段受到相同的侧向来流
+此时 $\tan\theta_G$ 变成 $\tan\theta_G\cdot\cos\gamma_Y$,
+而 $\tan\alpha_W$ 变成 $\tan\alpha_W\cdot\cos\gamma_Y = \frac{U_P}{U_T}\cos\gamma_Y$.
+
+\[
+    \tan\alpha_Y = \tan\left[\theta_G+\alpha_W\right] \\
+    =\frac{\left(\tan\theta_G+\tan\alpha_W\right)\cdot\cos\gamma_Y}{1-\tan\theta_G\cdot\cos\gamma_Y\cdot\tan\alpha_W\cdot\cos\gamma_Y}\\
+    =\frac{\left(\tan\theta_G+\frac{U_P}{U_T}\right)\cdot\cos\gamma_Y}{1-\tan\theta_G\frac{U_P}{U_T}\cdot\left(\cos\gamma_Y\right)^2}\\
+    =\frac{\left(U_T\tan\theta_G+U_P\right)\cdot\cos\gamma_Y}{U_T-\tan\theta_G U_P\cdot\left(\cos\gamma_Y\right)^2}\\
+\]
+
+
+
+=======
+带偏斜量的气流作用在近似为二元翼型的桨叶微段上得到一组气动力系数 $C_L,C_D$ 一般称之为二元翼型的升力系数和阻力系数。二元翼型假设整个翼型的气动力作用在位于1/4弦线处的气动中心，阻力系数$C_D$的方向与来流方向一致，升力系数$C_L$方向与$C_D$垂直。
+
+二元翼型气动力根据风洞试验得到的数据通过分段线性插值的方法得到。
+
+\[C_D = f\left(\alpha_Y,Mach\right)\]
+\[C_L = f\left(\alpha_Y,Mach\right)\]
+
+利用力的归一化因子计算得到桨叶微段上的气动力
+$F_{NBS} = \frac{1}{2}\rho\left(\omega R\right)^2 \cdot S_Y$ 
+
+式中 $S_Y$ 为桨叶微段面积， $\rho$ 为当地空气密度， $\Omega R$ 为旋翼桨尖速度。
+
+CLCD可以在桨叶微段的来流坐标系中写作$\left(-C_D,0,C_L\right)$
+
+从桨叶坐标系到桨叶微段来流坐标系经过两次转轴
+1. 绕Z轴转过角度 $+\gamma_Y$, 其中 $\tan\gamma_Y = U_R/U_T$
+2. 再绕Y轴转过角度 $+\alpha_W$, 其中 $\tan\alpha_W = U_P/\sqrt{U_T^2+U_R^2}$
+
+% todo
+上面的转动思路不对 !
+
+% 应该为
+% % 1. 绕Y轴转过角度 $+\alpha_W$, 其中 $\tan\alpha_W = U_P/U_T$
+% % 2. 绕Z轴转过角度 $+\gamma_Y$, 其中 $\tan\gamma_Y = U_R/U_T$
+
+% 1. 绕Z轴转过角度 $+\gamma_Y$, 其中 $\tan\gamma_Y = U_R/U_T$
+% 2. 再绕Y轴转过角度 $+\alpha_W$, 其中 $\tan\alpha_W = U_P/U_T$
+
+
+我用坐标转换的方法没能成功处理CDCL的坐标转换，因为偏斜角 $\gamma_Y$ 的处理方式是直接乘在两个tan函数上的，
+
+
+
+新的思路是将UTUPUR想象成一个长方体，CD方向正好在斜对角线方向上
+因此CD的三个分量为
+
+\[F_{TD} = F_{NBS} \cdot  U_Y^2 \cdot  C_D \cdot  U_T/U_Y\]
+\[F_{RD} = F_{NBS} \cdot  U_Y^2 \cdot  C_D \cdot  U_R/U_Y\]
+\[F_{PD} = F_{NBS} \cdot  U_Y^2 \cdot  C_D \cdot  U_P/U_Y\]
+
+CD方向为 $\left(-U_T,U_R,-U_P\right)$
+CDCL所在平面的法向量方向为 $\left(U_R,U_T,0\right)$
+二者叉乘得到CL方向的矢量 $\left(U_TU_P,-U_RU_P, -U_T^2-U_R^2\right)$
+转换到$U_T,U_R,U_P$方向为$\left(-U_TU_P,-U_RU_P, U_T^2+U_R^2\right)$ xz方向加负号
+
+CL垂直于CD方向，处理时需要通过偏斜角来考虑
+
+\[F_{TL} = F_{NBS} \cdot  C_L \cdot  -U_TU_P
+F_{RL} = F_{NBS} \cdot  C_L \cdot  -U_RU_P
+F_{PL} = F_{NBS} \cdot  C_D \cdot  (U_T^2+U_R^2)\]
+
+而吉师兄的论文和kim的论文中给出的拉力系数公式部分为
+\[F_{TL} = F_{NBS} \cdot  C_L \cdot  -U_PU_Y\cdot \cos\gamma_Y
+F_{RL} = F_{NBS} \cdot  C_L \cdot  -U_RU_PU_Y\cdot \cos\gamma_Y/U_T
+F_{PL} = F_{NBS} \cdot  C_D \cdot  U_YU_T/\cos\gamma_Y\]
+
+FTFR 这样处理的原因我没弄清楚
+
+=========
+由桨叶各叶素的气动力可得单片桨叶根部受到的气动力为
+\[
+    F_T = \sum_{j=1}^{Ns}F_{Tj}
+    F_R = \sum_{j=1}^{Ns}F_{Rj}
+    F_P = \sum_{j=1}^{Ns}F_{Pj}
+\]
+
+相对挥舞摆振铰的气动力矩为
+\[
+    M_{\beta}=\sum_{j=1}^{Ns}\left(\bar{y}_{2j} R F_{Pj}\right)
+    M_{\zeta}=\sum_{j=1}^{Ns}\left(\bar{y}_{2j} R F_{Tj}\right)
+\]
+
+式中： $N_s$ 为单片桨叶上的分段数。
+
+最后，将单片桨叶气动力和气动力矩从桨叶坐标系转换到旋翼旋转坐标系
+
+\[
+    \begin{bmatrix}
+        F_{XA}\\
+        F_{YA}\\
+        F_{ZA}\\
+    \end{bmatrix}
+    =\mathbf{T}_{RBS}
+    \begin{bmatrix}
+        -F_T\\
+        F_R\\
+        -F_P\\
+    \end{bmatrix}
+\]
+
+其中 $\mathbf{T}_{RBS}$ 为 $\mathbf{T}_{BSR}$ 的逆矩阵，由于坐标转换矩阵为正交矩阵，使用转置方法就可以计算坐标转换阵的逆矩阵。
+
+========
+
+桨叶动力学方程
+
+桨叶任意一点运动速度为
+
+\[
+    V_P = V_H + \omega\times r_p
+\]
+
+对时间求导得到 桨叶任意一点加速度
+
+\[
+    a_p = a_H + \dot\omega\times r_p + \omega\times\left(
+        \omega\times r_p + \frac{\partial r_p}{\partial t}
+    \right)
+\]
+
+
+由桨叶运动加速度得到单位长度桨叶惯性力和惯性力矩分别为
+
+\[dF = \rho_b a_p dr\]
+\[dM = r\times dF\]
+
+$\rho_b$为桨叶单位长度质量，
+$r$为桨叶微段到桨叶根部的相对位置矢量？？
+桨叶根部还是挥舞摆振铰处？ 从后文看应该是挥舞摆振铰处
+
+由上式积分得到作用于挥舞摆振铰处的惯性力就分别为
+\[ M_{\beta I} =  L_I =  \int_e^R -r \rho a_{ZPBS} dr \]
+\[ M_{\zeta I} = -N_I = -\int_e^R -r \rho a_{XPBS} dr = \int_e^R r\rho a_{XPBS} dr \]
+
+式中 $\rho$ 为空气密度，$a_{XPBS},a_{YPBS},a_{ZPBS}$ 为桨叶上任意一点加速度 $a_p$ 在桨叶坐标系中的分量，且
+
+\[
+    \begin{bmatrix}
+        a_{XPBS}\\
+        a_{YPBS}\\
+        a_{ZPBS}\\
+    \end{bmatrix}
+    =\mathbf{R}_{BSR}
+    \begin{bmatrix}
+        a_{XP}\\
+        a_{YP}\\
+        a_{ZP}\\
+    \end{bmatrix}
+\]
+
+
+铰链处的气动力矩、惯性力矩、弹簧约束力矩和摆振阻尼器产生的力矩平衡关系如下所示：
+\[
+    M_{\beta A}+
+    M_{\beta I}+
+    M_{\beta K}+
+    M_{\beta LD}=0
+\]
+
+\[
+    M_{\zeta A}+
+    M_{\zeta I}+
+    M_{\zeta K}+
+    M_{\zeta LD}=0
+\]
+
+$M_{\beta K},  M_{\zeta K}$ 为挥舞、摆振方向的弹簧约束力矩
+$M_{\beta LD},  M_{\zeta LD}$ 为挥舞、摆振方向由摆振阻尼器产生的力矩
+
+根据力矩平衡方程计算处的挥舞运动和摆振运动方程为：
+
+
+? 弹簧力矩呢
+\[I_{b} \ddots{\beta_i} = M_{\beta LD} + M_{\beta A} + M_{\beta I}\]
+
